@@ -9,6 +9,7 @@ int main() {
     //Cleiton
     carregar_turma(turma, &total);
 
+    // Lavignia
     printf("\n---  #####  -----   Sistema de Alunos  -----  #####   ---\n");
     printf("1 - Cadastrar novo aluno \n");
     printf("2 - Listar todos alunos \n");
