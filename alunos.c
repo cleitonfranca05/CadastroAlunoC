@@ -4,6 +4,24 @@
 // Nayara
 void cadastrar_aluno(Aluno turma[], int *total) {
 
+     if (*total >= MAX_ALUNOS) {
+        printf("Limite de alunos atingido!\n");
+        return;
+    }
+
+     getchar();
+     printf("\n--Cadastro de Aluno--");
+     printf("\nDigite o nome do aluno(a):");
+     scanf("%49[^\n]", turma[*total].nome);
+     printf("Digite o RA:");
+     scanf("%d", &turma[*total].ra);
+     printf("Digite a 1 nota:");
+     scanf("%f", &turma[*total].nota1);
+     printf("Digite a 2 nota:");
+     scanf("%f", &turma[*total].nota2);
+
+     (*total)++;
+
 }
 
 // Luiza
