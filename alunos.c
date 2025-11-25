@@ -26,8 +26,19 @@ void cadastrar_aluno(Aluno turma[], int *total) {
 
 // Luiza
 void listar_alunos(Aluno turma[], int total) {
-
-
+    if(total == 0){
+        printf("\nA turma está vazia. Nao ha alunos para listar\n");
+        return;
+    }
+    for(int i = 0; i < MAX_ALUNOS; i++){
+        printf("\n--- LISTA DO ALUNO: %d  ---\n", i + 1);
+        printf("\nNome: %s", turma[i].nome);
+        printf("\nRA: %d", turma[i].ra);
+        printf("\nNota 1: %.1f", turma[i].nota1);
+        printf("\nNota 2: %.1f", turma[i].nota2);
+        printf("\n");
+    }
+    return;
 }
 
 // Cleiton
