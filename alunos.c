@@ -30,12 +30,19 @@ void listar_alunos(Aluno turma[], int total) {
         printf("\nA turma está vazia. Nao ha alunos para listar\n");
         return;
     }
-    for(int i = 0; i < MAX_ALUNOS; i++){
+    for(int i = 0; i < total; i++){
+        float media = (turma[i].nota1 + turma[i].nota2) / 2;
         printf("\n--- LISTA DO ALUNO: %d  ---\n", i + 1);
         printf("\nNome: %s", turma[i].nome);
         printf("\nRA: %d", turma[i].ra);
         printf("\nNota 1: %.1f", turma[i].nota1);
         printf("\nNota 2: %.1f", turma[i].nota2);
+        printf("Media: %.2f\n", media);
+        if (media >= 6.0){
+            printf("Status: Aprovado\n");
+        }else{
+            printf("Status: Reprovado\n");
+        }
         printf("\n");
     }
     return;
