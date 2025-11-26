@@ -26,7 +26,7 @@ int main() {
          break;
 
     case 2:
-         listar_alunos(turma, &total);
+         listar_alunos(turma, total);
          break;
 
     case 3:
