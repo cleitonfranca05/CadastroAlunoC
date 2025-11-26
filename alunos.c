@@ -37,7 +37,7 @@ void listar_alunos(Aluno turma[], int total) {
         printf("\nRA: %d", turma[i].ra);
         printf("\nNota 1: %.1f", turma[i].nota1);
         printf("\nNota 2: %.1f", turma[i].nota2);
-        printf("Media: %.2f\n", media);
+        printf("\nMedia: %.2f\n", media);
         if (media >= 6.0){
             printf("Status: Aprovado\n");
         }else{
@@ -81,12 +81,16 @@ void carregar_turma(Aluno turma[], int *total) {
 
     *total = 0;
 
-    while (!feof(arq) && *total < MAX_ALUNOS) {
-        fscanf(arq, " %49s %d %f %f",
-               turma[*total].nome,
-               &turma[*total].ra,
-               &turma[*total].nota1,
-               &turma[*total].nota2);
+    while (*total < MAX_ALUNOS) {
+        int lidos = fscanf(arq, " %49s %d %f %f",
+        turma[*total].nome,
+        &turma[*total].ra,
+        &turma[*total].nota1,
+        &turma[*total].nota2);
+
+        if (lidos != 4) {
+            break;
+        }
 
         (*total)++;
     }
@@ -95,3 +99,5 @@ void carregar_turma(Aluno turma[], int *total) {
 
     printf("Dados carregados com sucesso!\n");
 }
+
+
